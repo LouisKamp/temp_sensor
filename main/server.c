@@ -12,8 +12,6 @@ static void startHttpServer(void)
     httpServerConfiguration.server_port = SERVER_PORT;
     if (httpd_start(&httpServerInstance, &httpServerConfiguration) == ESP_OK)
     {
-        ESP_ERROR_CHECK(httpd_register_uri_handler(httpServerInstance, &onUri));
-        ESP_ERROR_CHECK(httpd_register_uri_handler(httpServerInstance, &offUri));
         ESP_ERROR_CHECK(httpd_register_uri_handler(httpServerInstance, &readUri));
     }
 }
