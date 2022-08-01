@@ -2,7 +2,7 @@
 
 #include "constants.c"
 #include "server.c"
-#include "hotspot.c"
+#include "station.c"
 
 void setupPints()
 {
@@ -36,7 +36,8 @@ void setupPints()
 void app_main(void)
 {
     setupPints();
-    launchSoftAp();
-    while (1)
-        vTaskDelay(10);
+    // launchSoftAp();
+    wifi_init_sta();
+    // while (1)
+    //     vTaskDelay(10);
 }
